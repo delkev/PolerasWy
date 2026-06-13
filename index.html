@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanWear — Nueva Colección SS26</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">URBANWEAR</div>
+  </div>
+
+  <!-- CARRITO LATERAL -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart" id="cart">
+    <div class="cart-header">
+      <span class="cart-title">Tu carrito</span>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <ul id="cartItems" class="cart-list"></ul>
+    <div class="cart-empty" id="cartEmpty">
+      <p>Tu carrito está vacío.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">S/ 0.00</span>
+      </div>
+      <a href="#" class="btn-checkout">Finalizar compra</a>
+    </div>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div id="mainContent">
+
+    <!-- ANUNCIO SUPERIOR -->
+    <div class="announcement-bar">
+      <span>Envío gratis en pedidos sobre S/ 150</span>
+      <span class="separator">·</span>
+      <span>Devoluciones en 30 días</span>
+      <span class="separator">·</span>
+      <span>Pago 100% seguro</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <button class="nav-menu-btn" onclick="toggleMobileMenu()" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="logo">URBANWEAR</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#coleccion">Colección</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart()" aria-label="Carrito">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span id="contador" class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Nueva colección — SS26</p>
+        <h1 class="hero-headline">Define<br>tu calle.</h1>
+        <p class="hero-sub">Poleras urbanas de calidad premium. Diseñadas para los que no pasan desapercibidos.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">
+            Comprar ahora
+          </button>
+          <a href="#coleccion" class="btn-ghost">Ver colección</a>
+        </div>
+      </div>
+      <div class="hero-badge">SS26</div>
+    </section>
+
+    <!-- BANNER DE CATEGORÍAS -->
+    <section class="categories">
+      <div class="category-item">
+        <div class="category-img" style="background:#f0f0f0;"></div>
+        <span class="category-label">Oversized</span>
+      </div>
+      <div class="category-item">
+        <div class="category-img" style="background:#e8e8e8;"></div>
+        <span class="category-label">Essentials</span>
+      </div>
+      <div class="category-item">
+        <div class="category-img" style="background:#ddd;"></div>
+        <span class="category-label">Limited</span>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products-section" id="coleccion">
+      <div class="section-header">
+        <h2 class="section-title">Nueva colección</h2>
+        <a href="#" class="section-link">Ver todo →</a>
+      </div>
+
+      <div class="products-grid">
+
+        <article class="card" data-name="Oversize Black" data-price="79.90">
+          <div class="card-media">
+            <img src="img/polera1.jpg" alt="Polera Oversize Black" loading="lazy">
+            <span class="card-tag">Nuevo</span>
+            <button class="card-wishlist" aria-label="Guardar en favoritos">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-info">
+              <h3 class="card-name">Oversize Black</h3>
+              <span class="card-price">S/ 79.90</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add" onclick="addToCart('Oversize Black', 79.90)">Agregar al carrito</button>
+              <a class="btn-wsp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20me%20interesa%20la%20polera%20*Oversize%20Black*%20(S%2F%2079.90).%20%C2%BFTiene%20disponibilidad%3F" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.845L.057 23.881a.5.5 0 0 0 .615.611l6.218-1.63A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.67-.516-5.186-1.415l-.372-.22-3.855 1.011 1.028-3.757-.242-.386A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Classic White" data-price="69.90">
+          <div class="card-media">
+            <img src="img/polera2.jpg" alt="Polera Classic White" loading="lazy">
+            <button class="card-wishlist" aria-label="Guardar en favoritos">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-info">
+              <h3 class="card-name">Classic White</h3>
+              <span class="card-price">S/ 69.90</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add" onclick="addToCart('Classic White', 69.90)">Agregar al carrito</button>
+              <a class="btn-wsp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20me%20interesa%20la%20polera%20*Classic%20White*%20(S%2F%2069.90).%20%C2%BFTiene%20disponibilidad%3F" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.845L.057 23.881a.5.5 0 0 0 .615.611l6.218-1.63A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.67-.516-5.186-1.415l-.372-.22-3.855 1.011 1.028-3.757-.242-.386A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Street Red" data-price="89.90">
+          <div class="card-media">
+            <img src="img/polera3.jpg" alt="Polera Street Red" loading="lazy">
+            <span class="card-tag card-tag--hot">Popular</span>
+            <button class="card-wishlist" aria-label="Guardar en favoritos">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-info">
+              <h3 class="card-name">Street Red</h3>
+              <span class="card-price">S/ 89.90</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add" onclick="addToCart('Street Red', 89.90)">Agregar al carrito</button>
+              <a class="btn-wsp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20me%20interesa%20la%20polera%20*Street%20Red*%20(S%2F%2089.90).%20%C2%BFTiene%20disponibilidad%3F" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.845L.057 23.881a.5.5 0 0 0 .615.611l6.218-1.63A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.67-.516-5.186-1.415l-.372-.22-3.855 1.011 1.028-3.757-.242-.386A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-name="Urban Blue" data-price="99.90">
+          <div class="card-media">
+            <img src="img/polera4.jpg" alt="Polera Urban Blue" loading="lazy">
+            <button class="card-wishlist" aria-label="Guardar en favoritos">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="card-info">
+              <h3 class="card-name">Urban Blue</h3>
+              <span class="card-price">S/ 99.90</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn-add" onclick="addToCart('Urban Blue', 99.90)">Agregar al carrito</button>
+              <a class="btn-wsp" href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20me%20interesa%20la%20polera%20*Urban%20Blue*%20(S%2F%2099.90).%20%C2%BFTiene%20disponibilidad%3F" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.845L.057 23.881a.5.5 0 0 0 .615.611l6.218-1.63A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.67-.516-5.186-1.415l-.372-.22-3.855 1.011 1.028-3.757-.242-.386A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- BANNER CENTRAL -->
+    <section class="mid-banner">
+      <div class="mid-banner-content">
+        <p class="mid-banner-eyebrow">Edición limitada</p>
+        <h2 class="mid-banner-headline">Hecho para durar.<br>Diseñado para destacar.</h2>
+        <button class="btn-primary btn-light" onclick="document.getElementById('coleccion').scrollIntoView({behavior:'smooth'})">
+          Ver colección completa
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">URBANWEAR</div>
+          <p class="footer-tagline">Poleras urbanas de calidad premium.</p>
+          <a class="footer-wsp-btn" href="https://wa.me/51950818240?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20UrbanWear." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.845L.057 23.881a.5.5 0 0 0 .615.611l6.218-1.63A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.898 0-3.67-.516-5.186-1.415l-.372-.22-3.855 1.011 1.028-3.757-.242-.386A9.952 9.952 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Escribirnos por WhatsApp
+          </a>
+        </div>
+        <div class="footer-nav">
+          <h4>Tienda</h4>
+          <ul>
+            <li><a href="#">Nueva colección</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Guía de tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="#">Devoluciones</a></li>
+            <li><a href="#">Envíos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 UrbanWear. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  </div><!-- fin mainContent -->
+
+  <script src="js/script.js"></script>
+</body>
+</html>
